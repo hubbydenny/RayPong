@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{ed7536a5-0b53-4d94-ad04-9946b1756eb7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib">
+      <UniqueIdentifier>{e0bbd5df-0c7c-46c5-bfd0-bdf2707e52b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="inc">
+      <UniqueIdentifier>{af218ec7-530f-4242-846b-647914954fc3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Music">
+      <UniqueIdentifier>{bb8b02f9-13d2-4a31-8371-7b2bd9d4e7a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Textures">
+      <UniqueIdentifier>{42b67fb1-81d7-40ff-bfa5-a2852f6e82cd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="lib\libgcc_s_dw2-1.dll">
+      <Filter>lib</Filter>
+    </None>
+    <None Include="lib\libstdc++-6.dll">
+      <Filter>lib</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="inc\header.h" />
+    <ClInclude Include="inc\rlcpp\AudioDevice.hpp" />
+    <ClInclude Include="inc\rlcpp\AudioStream.hpp" />
+    <ClInclude Include="inc\rlcpp\AudioStreamUnmanaged.hpp" />
+    <ClInclude Include="inc\rlcpp\AutomationEventList.hpp" />
+    <ClInclude Include="inc\rlcpp\BoundingBox.hpp" />
+    <ClInclude Include="inc\rlcpp\Camera2D.hpp" />
+    <ClInclude Include="inc\rlcpp\Camera3D.hpp" />
+    <ClInclude Include="inc\rlcpp\Color.hpp" />
+    <ClInclude Include="inc\rlcpp\FileData.hpp" />
+    <ClInclude Include="inc\rlcpp\FileText.hpp" />
+    <ClInclude Include="inc\rlcpp\Font.hpp" />
+    <ClInclude Include="inc\rlcpp\FontUnmanaged.hpp" />
+    <ClInclude Include="inc\rlcpp\Functions.hpp" />
+    <ClInclude Include="inc\rlcpp\Gamepad.hpp" />
+    <ClInclude Include="inc\rlcpp\Image.hpp" />
+    <ClInclude Include="inc\rlcpp\Keyboard.hpp" />
+    <ClInclude Include="inc\rlcpp\Material.hpp" />
+    <ClInclude Include="inc\rlcpp\MaterialUnmanaged.hpp" />
+    <ClInclude Include="inc\rlcpp\Matrix.hpp" />
+    <ClInclude Include="inc\rlcpp\Mesh.hpp" />
+    <ClInclude Include="inc\rlcpp\MeshUnmanaged.hpp" />
+    <ClInclude Include="inc\rlcpp\Model.hpp" />
+    <ClInclude Include="inc\rlcpp\ModelAnimation.hpp" />
+    <ClInclude Include="inc\rlcpp\ModelUnmanaged.hpp" />
+    <ClInclude Include="inc\rlcpp\Mouse.hpp" />
+    <ClInclude Include="inc\rlcpp\Music.hpp" />
+    <ClInclude Include="inc\rlcpp\MusicUnmanaged.hpp" />
+    <ClInclude Include="inc\rlcpp\Quaternion.hpp" />
+    <ClInclude Include="inc\rlcpp\Ray.hpp" />
+    <ClInclude Include="inc\rlcpp\RayCollision.hpp" />
+    <ClInclude Include="inc\rlcpp\raylib-cpp-utils.hpp" />
+    <ClInclude Include="inc\rlcpp\raylib-cpp.hpp" />
+    <ClInclude Include="inc\rlcpp\raylib.hpp" />
+    <ClInclude Include="inc\rlcpp\RaylibException.hpp" />
+    <ClInclude Include="inc\rlcpp\raymath.hpp" />
+    <ClInclude Include="inc\rlcpp\Rectangle.hpp" />
+    <ClInclude Include="inc\rlcpp\RenderTexture.hpp" />
+    <ClInclude Include="inc\rlcpp\RenderTextureUnmanaged.hpp" />
+    <ClInclude Include="inc\rlcpp\Shader.hpp" />
+    <ClInclude Include="inc\rlcpp\ShaderUnmanaged.hpp" />
+    <ClInclude Include="inc\rlcpp\Sound.hpp" />
+    <ClInclude Include="inc\rlcpp\SoundUnmanaged.hpp" />
+    <ClInclude Include="inc\rlcpp\Text.hpp" />
+    <ClInclude Include="inc\rlcpp\Texture.hpp" />
+    <ClInclude Include="inc\rlcpp\TextureUnmanaged.hpp" />
+    <ClInclude Include="inc\rlcpp\Touch.hpp" />
+    <ClInclude Include="inc\rlcpp\Vector2.hpp" />
+    <ClInclude Include="inc\rlcpp\Vector3.hpp" />
+    <ClInclude Include="inc\rlcpp\Vector4.hpp" />
+    <ClInclude Include="inc\rlcpp\VrStereoConfig.hpp" />
+    <ClInclude Include="inc\rlcpp\Wave.hpp" />
+    <ClInclude Include="inc\rlcpp\WaveUnmanaged.hpp" />
+    <ClInclude Include="inc\rlcpp\Window.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="..\..\..\Downloads\RayPong music.mp3">
+      <Filter>src\Music</Filter>
+    </Media>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\Downloads\Memasik.png">
+      <Filter>src\Textures</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

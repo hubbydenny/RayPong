@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>18.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{d8010299-eed1-4025-952f-7af3d509a760}</ProjectGuid>
+    <RootNamespace>Project1</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>C:\raylib\include;$(ProjectDir)inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\raylib\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>raylib.lib;winmm.lib;opengl32.lib;gdi32.lib;user32.lib;shell32.lib;kernel32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <Manifest>
+      <EnableSegmentHeap>true</EnableSegmentHeap>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>C:\raylib\include;$(ProjectDir)inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\raylib\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>raylib.lib;winmm.lib;opengl32.lib;gdi32.lib;user32.lib;shell32.lib;kernel32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <Manifest>
+      <EnableSegmentHeap>true</EnableSegmentHeap>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>C:\raylib\include;$(ProjectDir)inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\raylib\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>raylib.lib;winmm.lib;opengl32.lib;gdi32.lib;user32.lib;shell32.lib;kernel32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <Manifest>
+      <EnableSegmentHeap>true</EnableSegmentHeap>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>C:\raylib\include;$(ProjectDir)inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\raylib\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>raylib.lib;winmm.lib;opengl32.lib;gdi32.lib;user32.lib;shell32.lib;kernel32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <Manifest>
+      <EnableSegmentHeap>true</EnableSegmentHeap>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="lib\libgcc_s_dw2-1.dll" />
+    <None Include="lib\libstdc++-6.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="inc\header.h" />
+    <ClInclude Include="inc\rlcpp\AudioDevice.hpp" />
+    <ClInclude Include="inc\rlcpp\AudioStream.hpp" />
+    <ClInclude Include="inc\rlcpp\AudioStreamUnmanaged.hpp" />
+    <ClInclude Include="inc\rlcpp\AutomationEventList.hpp" />
+    <ClInclude Include="inc\rlcpp\BoundingBox.hpp" />
+    <ClInclude Include="inc\rlcpp\Camera2D.hpp" />
+    <ClInclude Include="inc\rlcpp\Camera3D.hpp" />
+    <ClInclude Include="inc\rlcpp\Color.hpp" />
+    <ClInclude Include="inc\rlcpp\FileData.hpp" />
+    <ClInclude Include="inc\rlcpp\FileText.hpp" />
+    <ClInclude Include="inc\rlcpp\Font.hpp" />
+    <ClInclude Include="inc\rlcpp\FontUnmanaged.hpp" />
+    <ClInclude Include="inc\rlcpp\Functions.hpp" />
+    <ClInclude Include="inc\rlcpp\Gamepad.hpp" />
+    <ClInclude Include="inc\rlcpp\Image.hpp" />
+    <ClInclude Include="inc\rlcpp\Keyboard.hpp" />
+    <ClInclude Include="inc\rlcpp\Material.hpp" />
+    <ClInclude Include="inc\rlcpp\MaterialUnmanaged.hpp" />
+    <ClInclude Include="inc\rlcpp\Matrix.hpp" />
+    <ClInclude Include="inc\rlcpp\Mesh.hpp" />
+    <ClInclude Include="inc\rlcpp\MeshUnmanaged.hpp" />
+    <ClInclude Include="inc\rlcpp\Model.hpp" />
+    <ClInclude Include="inc\rlcpp\ModelAnimation.hpp" />
+    <ClInclude Include="inc\rlcpp\ModelUnmanaged.hpp" />
+    <ClInclude Include="inc\rlcpp\Mouse.hpp" />
+    <ClInclude Include="inc\rlcpp\Music.hpp" />
+    <ClInclude Include="inc\rlcpp\MusicUnmanaged.hpp" />
+    <ClInclude Include="inc\rlcpp\Quaternion.hpp" />
+    <ClInclude Include="inc\rlcpp\Ray.hpp" />
+    <ClInclude Include="inc\rlcpp\RayCollision.hpp" />
+    <ClInclude Include="inc\rlcpp\raylib-cpp-utils.hpp" />
+    <ClInclude Include="inc\rlcpp\raylib-cpp.hpp" />
+    <ClInclude Include="inc\rlcpp\raylib.hpp" />
+    <ClInclude Include="inc\rlcpp\RaylibException.hpp" />
+    <ClInclude Include="inc\rlcpp\raymath.hpp" />
+    <ClInclude Include="inc\rlcpp\Rectangle.hpp" />
+    <ClInclude Include="inc\rlcpp\RenderTexture.hpp" />
+    <ClInclude Include="inc\rlcpp\RenderTextureUnmanaged.hpp" />
+    <ClInclude Include="inc\rlcpp\Shader.hpp" />
+    <ClInclude Include="inc\rlcpp\ShaderUnmanaged.hpp" />
+    <ClInclude Include="inc\rlcpp\Sound.hpp" />
+    <ClInclude Include="inc\rlcpp\SoundUnmanaged.hpp" />
+    <ClInclude Include="inc\rlcpp\Text.hpp" />
+    <ClInclude Include="inc\rlcpp\Texture.hpp" />
+    <ClInclude Include="inc\rlcpp\TextureUnmanaged.hpp" />
+    <ClInclude Include="inc\rlcpp\Touch.hpp" />
+    <ClInclude Include="inc\rlcpp\Vector2.hpp" />
+    <ClInclude Include="inc\rlcpp\Vector3.hpp" />
+    <ClInclude Include="inc\rlcpp\Vector4.hpp" />
+    <ClInclude Include="inc\rlcpp\VrStereoConfig.hpp" />
+    <ClInclude Include="inc\rlcpp\Wave.hpp" />
+    <ClInclude Include="inc\rlcpp\WaveUnmanaged.hpp" />
+    <ClInclude Include="inc\rlcpp\Window.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="..\..\..\Downloads\RayPong music.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\Downloads\Memasik.png" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

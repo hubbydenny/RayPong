@@ -3,3 +3,4 @@ So my todo's
 2. make working volume thing
 3. I need more ideas
 4. off debugger.
+5. fix image

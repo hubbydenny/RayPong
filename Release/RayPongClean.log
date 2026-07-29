@@ -1,0 +1,70 @@
+﻿  main.cpp
+C:\Users\warp\source\repos\RayPongClean\RayPongClean\main.cpp(33,30): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\warp\source\repos\RayPongClean\RayPongClean\main.cpp(34,31): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\warp\source\repos\RayPongClean\RayPongClean\main.cpp(52,67): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\warp\source\repos\RayPongClean\RayPongClean\main.cpp(67,67): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\warp\source\repos\RayPongClean\RayPongClean\main.cpp(133,35): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\warp\source\repos\RayPongClean\RayPongClean\main.cpp(209,75): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\warp\source\repos\RayPongClean\RayPongClean\main.cpp(209,62): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\warp\source\repos\RayPongClean\RayPongClean\main.cpp(209,45): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\warp\source\repos\RayPongClean\RayPongClean\main.cpp(209,39): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\warp\source\repos\RayPongClean\RayPongClean\main.cpp(211,58): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+main.obj : error LNK2001: unresolved external symbol _GetFontDefault
+main.obj : error LNK2001: unresolved external symbol _DrawRectangleGradientEx
+main.obj : error LNK2001: unresolved external symbol _ToggleFullscreen
+main.obj : error LNK2001: unresolved external symbol _UnloadCodepoints
+main.obj : error LNK2001: unresolved external symbol _IsKeyDown
+main.obj : error LNK2001: unresolved external symbol _Fade
+main.obj : error LNK2001: unresolved external symbol _DrawTexturePro
+main.obj : error LNK2001: unresolved external symbol _SetExitKey
+main.obj : error LNK2001: unresolved external symbol _DrawTextCodepoint
+main.obj : error LNK2001: unresolved external symbol _GetMouseWheelMove
+main.obj : error LNK2001: unresolved external symbol _IsMouseButtonPressed
+main.obj : error LNK2001: unresolved external symbol _GetGlyphIndex
+main.obj : error LNK2001: unresolved external symbol _GetScreenWidth
+main.obj : error LNK2001: unresolved external symbol _GetMousePosition
+main.obj : error LNK2001: unresolved external symbol _LoadFontEx
+main.obj : error LNK2001: unresolved external symbol _SetTargetFPS
+main.obj : error LNK2001: unresolved external symbol _GetCodepointPrevious
+main.obj : error LNK2001: unresolved external symbol _GetCodepointNext
+main.obj : error LNK2001: unresolved external symbol _DrawTexture
+main.obj : error LNK2001: unresolved external symbol _TextToInteger
+main.obj : error LNK2001: unresolved external symbol _GetCharPressed
+main.obj : error LNK2001: unresolved external symbol _TextToFloat
+main.obj : error LNK2001: unresolved external symbol _IsGamepadButtonReleased
+main.obj : error LNK2001: unresolved external symbol _GetGamepadAxisMovement
+main.obj : error LNK2001: unresolved external symbol _IsGamepadButtonDown
+main.obj : error LNK2001: unresolved external symbol _DrawCircle
+main.obj : error LNK2001: unresolved external symbol _ClearBackground
+main.obj : error LNK2001: unresolved external symbol _CheckCollisionPointRec
+main.obj : error LNK2001: unresolved external symbol _MeasureTextEx
+main.obj : error LNK2001: unresolved external symbol _UnloadFileText
+main.obj : error LNK2001: unresolved external symbol _DrawLine
+main.obj : error LNK2001: unresolved external symbol _UnloadTexture
+main.obj : error LNK2001: unresolved external symbol _DrawFPS
+main.obj : error LNK2001: unresolved external symbol _IsMouseButtonDown
+main.obj : error LNK2001: unresolved external symbol _CodepointToUTF8
+main.obj : error LNK2001: unresolved external symbol _GetColor
+main.obj : error LNK2001: unresolved external symbol _LoadFileText
+main.obj : error LNK2001: unresolved external symbol _LoadTexture
+main.obj : error LNK2001: unresolved external symbol _GetScreenHeight
+main.obj : error LNK2001: unresolved external symbol _IsKeyPressed
+main.obj : error LNK2001: unresolved external symbol _LoadTextureFromImage
+main.obj : error LNK2001: unresolved external symbol _WindowShouldClose
+main.obj : error LNK2001: unresolved external symbol _IsMouseButtonReleased
+main.obj : error LNK2001: unresolved external symbol _DrawRectangle
+main.obj : error LNK2001: unresolved external symbol _TextFormat
+main.obj : error LNK2001: unresolved external symbol _GetCodepoint
+main.obj : error LNK2001: unresolved external symbol _IsGamepadButtonPressed
+main.obj : error LNK2001: unresolved external symbol _GetClipboardText
+main.obj : error LNK2001: unresolved external symbol _BeginDrawing
+main.obj : error LNK2001: unresolved external symbol _SetShapesTexture
+main.obj : error LNK2001: unresolved external symbol _IsWindowFullscreen
+main.obj : error LNK2001: unresolved external symbol _LoadCodepoints
+main.obj : error LNK2001: unresolved external symbol _GetRandomValue
+main.obj : error LNK2001: unresolved external symbol _InitWindow
+main.obj : error LNK2001: unresolved external symbol _DecompressData
+main.obj : error LNK2001: unresolved external symbol _GetDirectoryPath
+main.obj : error LNK2001: unresolved external symbol _DrawText
+main.obj : error LNK2001: unresolved external symbol _EndDrawing
+C:\Users\warp\source\repos\RayPongClean\Release\RayPongClean.exe : fatal error LNK1120: 58 unresolved externals

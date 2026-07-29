@@ -1,10 +1,8 @@
+//#pragma comment(linker, "/SUBSYSTEM:windows /ENTRY:mainCRTStartup")
 #define _CRT_SECURE_NO_WARNINGS
 #include "../RayPongClean/Headers/raylib.h"
 #define RAYGUI_IMPLEMENTATION
 #include "../RayPongClean/Headers/raygui.h"
-# if defined(WIN64) && !defined(_DEBUG)
-#pragma comment(linker, "/SUBSYSTEM:windows /ENTRY:mainCRTStartup")
-#endif
 
 bool fps60 = false;
 bool ismenuopen = false;
@@ -115,7 +113,7 @@ int main() {
     SetTargetFPS(60);
     fps60 = true;
     ::SetExitKey(0);
-    Texture2D meme = LoadTexture("src/Textures/Memasik.png");
+    Texture2D meme = LoadTexture("Textures/Meme.png");
 
     while (!WindowShouldClose()) {
         if (IsKeyPressed(KEY_ESCAPE)) ismenuopen = !ismenuopen;

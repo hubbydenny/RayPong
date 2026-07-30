@@ -1,5 +1,6 @@
-//#pragma comment(linker, "/SUBSYSTEM:windows /ENTRY:mainCRTStartup")
+#pragma comment(linker, "/SUBSYSTEM:windows /ENTRY:mainCRTStartup")
 #define _CRT_SECURE_NO_WARNINGS
+#include <cmath>
 #include "../RayPongClean/Headers/raylib.h"
 #define RAYGUI_IMPLEMENTATION
 #include "../RayPongClean/Headers/raygui.h"
@@ -10,6 +11,8 @@ bool dropdownEditMode = false;
 bool colorDropdownEditMode = false;
 bool gameover = false;
 bool onscreen = true;
+bool pause = false;
+float volume = 0.5f;
 
 class Ball {
 public:
@@ -30,8 +33,8 @@ public:
     void Reset() {
         x = GetScreenWidth() / 2;
         y = GetScreenHeight() / 2;
-        speedX = (GetRandomValue(0, 1) == 0) ? -4 : 4;
-        speedY = (GetRandomValue(0, 1) == 0) ? -3 : 3;
+        speedX = (GetRandomValue(0, 1) == 0 ? -1 : 1) * GetRandomValue(3, 12);
+        speedY = (GetRandomValue(0, 1) == 0 ? -1 : 1) * GetRandomValue(3, 12);
     }
 };
 
@@ -92,15 +95,12 @@ int main() {
     Player2 player2;
     int score1 = 0;
     int score2 = 0;
-
-    float volume = 0.5f;
     bool fullscreen = false;
     bool boo = false;
     int difficulty = 0;
     bool showfps = false;
     int color = 0;
 
-    Rectangle volumeRect = { 180, 100, 200, 20 };
     Rectangle fullscreenRect = { 180, 130, 20, 20 };
     Rectangle booRect = { 180, 155, 20, 20 };
     Rectangle difficultyRect = { 180, 215, 200, 25 };
@@ -110,6 +110,9 @@ int main() {
     Rectangle colorRect = { 570, 215, 200, 25 };
 
     InitWindow(screenWidth, screenHeight, "RayPong");
+	InitAudioDevice();
+	Music music = LoadMusicStream("Audio/Music.mp3");
+	SetMusicVolume(music, volume);
     SetTargetFPS(60);
     fps60 = true;
     ::SetExitKey(0);
@@ -128,12 +131,10 @@ int main() {
                 DrawText("Settings", 300, 50, 24, DARKGRAY);
 
                 DrawText("Volume:", 100, 107, 16, DARKGRAY);
-                volume = GuiSlider(volumeRect, NULL, NULL, &volume, 0.0f, 1.0f);
-
                 DrawText("Fullscreen:", 93, 130, 15, DARKGRAY);
                 GuiCheckBox(fullscreenRect, NULL, &fullscreen);
 
-                DrawText("Noname", 100, 150, 16, DARKGRAY);
+                DrawText("Noname", 100, 155, 16, DARKGRAY);
                 GuiCheckBox(booRect, NULL, &boo);
 
                 DrawText("Fps", 100, 180, 16, DARKGRAY);
@@ -162,6 +163,8 @@ int main() {
                 }
             }
             else {
+                if (!IsMusicStreamPlaying(music)) PlayMusicStream(music);
+                UpdateMusicStream(music);
                 ball.Update();
                 player1.Update();
                 player2.Update();
@@ -169,10 +172,11 @@ int main() {
                 float player2x = (float)(sw - player2.Width - 10);
 
                 if (CircleRectCollisionNew(ball.x, ball.y, (float)ball.radius, player1.x, player1.y, (float)player1.Width, (float)player1.Height)) {
-                    ball.speedX *= -1;
+                    ball.speedX *= +1;
                 }
                 if (CircleRectCollisionNew(ball.x, ball.y, (float)ball.radius, player2x, player2.y, (float)player2.Width, (float)player2.Height)) {
-                    ball.speedX *= -1;
+                    ball.speedX *= +1;
+
                 }
 
                 if (ball.x <= 0) {
@@ -204,11 +208,11 @@ int main() {
                 DrawText(TextFormat("%i", score1), sw / 4 - 10, 20, 40, BLACK);
                 DrawText(TextFormat("%i", score2), sw * 3 / 4 - 10, 20, 40, BLACK);
 
-                ::DrawLine((float)(sw / 2), 0.0f, (float)(sw / 2), (float)sh, BLACK);
+                ::DrawLine((int)(sw / 2), 0.0f, (int)(sw / 2), (int)sh, BLACK);
 
-                DrawCircle((int)ball.x, (int)ball.y, ball.radius, WHITE);
-                DrawRectangle((int)player1.x, (int)player1.y, player1.Width, player1.Height, WHITE);
-                DrawRectangle((int)player2x, (int)player2.y, player2.Width, player2.Height, WHITE);
+                DrawCircle((float)ball.x, (float)ball.y, ball.radius, WHITE);
+                DrawRectangle((float)player1.x, (float)player1.y, player1.Width, player1.Height, WHITE);
+                DrawRectangle((float)player2x, (float)player2.y, player2.Width, player2.Height, WHITE);
 
                 if (showfps) {
                     DrawFPS(10, 10);
@@ -217,20 +221,16 @@ int main() {
                 if (gameover) {
                     DrawRectangle(0, 0, sw, sh, { 0, 0, 0, 200 });
 
-                    if (fullscreen) {
-                        ClearBackground(BLACK);
-                        DrawTexture(meme, 610, 920, WHITE);
-                        DrawText("Game over!", 620, 500, 100, WHITE);
+                    float scale = std::fmin(sw * 0.6f / meme.width, sh * 0.5f / meme.height);
+                    float scaledW = meme.width * scale;
+                    float scaledH = meme.height * scale;
+                    float memeX = sw / 2.0f - scaledW / 2.0f;
+                    float memeY = sh / 2.0f - scaledH / 2.0f + 30;
+                    Vector2 textSize = MeasureTextEx(GetFontDefault(), "Game over!", 60, 0);
 
-                    }
-                    else {
-                        ClearBackground(BLACK);
-                        DrawTexture(meme, 200, 200, WHITE);
-                        DrawText("Game over!", 295, 80, 40, WHITE);
-                    }
-
-                    float memeX = (float)(sw / 2 - meme.width / 2);
-                    float memeY = (float)(sh / 2 - meme.height / 2 + 30);
+                    DrawTexturePro(meme, Rectangle{0, 0, (float)meme.width, (float)meme.height},
+                        Rectangle{memeX, memeY, scaledW, scaledH}, Vector2{0, 0}, 0, WHITE);
+                    DrawText("Game over!", (int)(sw / 2 - textSize.x / 2), (int)(memeY - 80), 60, WHITE);
 
                     DrawText("Press ENTER to Restart", sw / 2 - 110, sh - 50, 20, LIGHTGRAY);
                     if (IsKeyPressed(KEY_ENTER)) {
@@ -246,6 +246,9 @@ int main() {
         }
     }
 
+    UnloadMusicStream(music);
+    CloseAudioDevice();
     UnloadTexture(meme);
+	UnloadMusicStream(music);
     return 0;
 }
